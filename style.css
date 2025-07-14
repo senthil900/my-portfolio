@@ -217,10 +217,15 @@ body {
     position: relative;
     height: 400px;
     animation: fadeInRight 1s ease-out 0.5s both;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .floating-card {
-    position: absolute;
+    position: relative;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -228,24 +233,23 @@ body {
     color: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: float 6s ease-in-out infinite;
+    width: 200px;
+    text-align: center;
 }
 
 .floating-card:nth-child(1) {
-    top: 20%;
-    left: 10%;
     animation-delay: 0s;
+    align-self: flex-start;
 }
 
 .floating-card:nth-child(2) {
-    top: 50%;
-    right: 10%;
     animation-delay: -2s;
+    align-self: flex-end;
 }
 
 .floating-card:nth-child(3) {
-    bottom: 20%;
-    left: 30%;
     animation-delay: -4s;
+    align-self: center;
 }
 
 .card-content {
