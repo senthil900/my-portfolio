@@ -105,9 +105,8 @@ function initScrollAnimations() {
                     animateSkillBars(entry.target);
                 }
                 
-                if (entry.target.classList.contains('stat')) {
-                    animateCounter(entry.target);
-                }
+                // REMOVED: Counter animation call
+                // Static counts will be displayed without animation
             }
         });
     }, observerOptions);
@@ -145,26 +144,8 @@ function animateSkillBars(skillCategory) {
     });
 }
 
-// Counter animation
-function animateCounter(statElement) {
-    const counter = statElement.querySelector('h4');
-    const target = parseInt(counter.textContent);
-    const duration = 2000;
-    const step = target / (duration / 16);
-    let current = 0;
-    
-    const updateCounter = () => {
-        current += step;
-        if (current < target) {
-            counter.textContent = Math.floor(current) + '+';
-            requestAnimationFrame(updateCounter);
-        } else {
-            counter.textContent = target + '+';
-        }
-    };
-    
-    updateCounter();
-}
+// REMOVED: Counter animation function
+// The counts will now display statically without incrementing animation
 
 // Contact form functionality
 function initContactForm() {
